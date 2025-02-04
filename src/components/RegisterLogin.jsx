@@ -38,7 +38,7 @@ const RegisterLogin = () => {
       return;
     }
   
-    const endpoint = isLogin ? 'http://127.0.0.1:5002/login' : 'http://127.0.0.1:5002/register';
+    const endpoint = isLogin ? 'https://backend-1-3-g5a8.onrender.com/login' : 'https://backend-1-3-g5a8.onrender.com/register';
   
     try {
       const response = await fetch(endpoint, {
