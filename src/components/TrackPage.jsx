@@ -12,7 +12,7 @@ function TrackPage() {
   // Fetch expenses from the backend
   const fetchExpenses = async () => {
     try {
-      const response = await fetch(`http://127.0.0.1:5002/expenses/${userId}`);
+      const response = await fetch(`https://backend-1-3-g5a8.onrender.com/${userId}`);
       const data = await response.json();
       setExpenses(data.expenses);
       const totalAmount = data.expenses.reduce((acc, expense) => acc + expense.amount, 0);
@@ -30,7 +30,7 @@ function TrackPage() {
   // Add a new expense
   const addExpense = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:5002/add_expense', {
+      const response = await fetch('https://backend-1-3-g5a8.onrender.com/add_expense', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ description, amount: parseFloat(amount), user_id: userId })
@@ -49,7 +49,7 @@ function TrackPage() {
   // Delete an expense
   const deleteExpense = async (expenseId, expenseAmount) => {
     try {
-      const response = await fetch(`http://127.0.0.1:5002/delete_expense/${expenseId}`, {
+      const response = await fetch(`https://backend-1-3-g5a8.onrender.com/delete_expense/${expenseId}`, {
         method: 'DELETE'
       });
 
